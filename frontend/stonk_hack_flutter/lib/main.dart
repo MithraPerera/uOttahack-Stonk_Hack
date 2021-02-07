@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   static const Color FOREGROUND_COLOR = Colors.teal;
   static const Color BACKGROUND_COLOR = Colors.white;
-  static const Color SECONDARY_COLOR = Colors.red;
+  Color SECONDARY_COLOR = Colors.teal[900];
 
   List<Stock> stockList = [];
 
