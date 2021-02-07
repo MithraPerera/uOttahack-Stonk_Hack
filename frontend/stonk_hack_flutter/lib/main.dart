@@ -11,9 +11,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  static const Color FOREGROUND_COLOR = Colors.teal;
-  static const Color BACKGROUND_COLOR = Colors.white;
-  Color SECONDARY_COLOR = Colors.teal[900];
+  static const Color FOREGROUND_COLOR = Color(0xff009688);
+  static const Color BACKGROUND_COLOR = Color(0xffFFEFD6);
+  static const Color SECONDARY_COLOR = Color(0xff004D40);
+  static const Color TERTIARY_COLOR = Color(0xff6f615B);
 
   List<Stock> stockList = [];
 
@@ -105,19 +106,44 @@ class _HomeState extends State<Home> {
           ], rows: stockList.map((stock) => DataRow(
             cells: [
               DataCell(
-                Text('${stock.ticker}')
+                Text(
+                  '${stock.ticker}',
+                  style: TextStyle(
+                    color: TERTIARY_COLOR,
+                    fontWeight: FontWeight.bold,
+                  )),
               ),
               DataCell(
-                  Text('${stock.price}')
+                  Text(
+                    '${stock.price}',
+                    style: TextStyle(
+                      color: TERTIARY_COLOR,
+                      fontWeight: FontWeight.bold,
+                    )),
+                  ),
+              DataCell(
+                  Text(
+                    '${stock.covidScore}',
+                    style: TextStyle(
+                      color: TERTIARY_COLOR,
+                      fontWeight: FontWeight.bold,
+                    )),
+                  ),
+              DataCell(
+                Text(
+                    '${stock.sentimentScore}',
+                    style: TextStyle(
+                      color: TERTIARY_COLOR,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
               DataCell(
-                  Text('${stock.covidScore}')
-              ),
-              DataCell(
-                  Text('${stock.sentimentScore}')
-              ),
-              DataCell(
-                  Text('NOPE')
+                Text(
+                    'NOPE',
+                    style: TextStyle(
+                      color: TERTIARY_COLOR,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
             ]
         )).toList()
