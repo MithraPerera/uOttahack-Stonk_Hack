@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[850],
+      //backgroundColor: Colors.grey[850],
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Colors.teal,
@@ -35,164 +35,70 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              color: Colors.grey[900],
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'TICKER',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                    Text(
-                      'PRICE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                    Text(
-                      'COVID SCORE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                    Text(
-                      'STONK SCORE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                    Text(
-                      'BUY/SELL',
-                      style: TextStyle(
-                        color: Colors.white,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            //SizedBox(height: 20.0),
-            Divider(
-              height: 60.0,
-              color: Colors.white,
-            ),
-            Container(
-              child: Row(
-                children: [
-                  Text(
-                    'TSLA',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      letterSpacing: 2.0,
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
 
-            SizedBox(height: 20.0),
-
-            Container(
-              color: Colors.grey[200],
-              child: Padding(
-                padding: const EdgeInsets.all(0.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      child: Text(
-                        'NOK',
-                        style: TextStyle(
-                          color: Colors.teal,
-                          letterSpacing: 2.0,
-                          fontSize: 28.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      '32.95',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '-1',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '1',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'SELL',
-                      style: TextStyle(
-                        color: Colors.teal,
-                        letterSpacing: 2.0,
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+      body: ListView(children: <Widget>[
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              'Top 3 Stocks',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
-
-            SizedBox(height: 20.0),
-
-            Container(
-              child: Row(
-                children: [
-                  Text(
-                    'GME',
-                    style: TextStyle(
-                      color: Colors.teal,
-                      letterSpacing: 2.0,
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-          ],
+          ),
         ),
+        DataTable(
+          columns: [
+            DataColumn(label: Text(  
+                    'TICKER',  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                )),  
+                DataColumn(label: Text(  
+                    'PRICE',  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                )),  
+                DataColumn(label: Text(  
+                    'COVID SCORE',  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                )),
+                DataColumn(label: Text(  
+                    'STONK SCORE',  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                )),
+                DataColumn(label: Text(  
+                    'BUY/SELL',  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                )),  
+          ], rows: [
+             DataRow(cells: [  
+                  DataCell(Text('TSLA')),  
+                  DataCell(Text('35.97')),  
+                  DataCell(Text('1')),
+                  DataCell(Text('-1')),
+                  DataCell(Text('SELL')),  
+                ]),  
+                DataRow(cells: [  
+                  DataCell(Text('NOK')),  
+                  DataCell(Text('10.17')),  
+                  DataCell(Text('1')),
+                  DataCell(Text('1')),
+                  DataCell(Text('BUY')),  
+                ]),  
+                DataRow(cells: [  
+                  DataCell(Text('GME')),  
+                  DataCell(Text('359.57')),  
+                  DataCell(Text('1')),
+                  DataCell(Text('1')),
+                  DataCell(Text('BUY')),  
+                ]),  
+                DataRow(cells: [  
+                  DataCell(Text('AMC')),  
+                  DataCell(Text('24.76')),  
+                  DataCell(Text('1')),
+                  DataCell(Text('-1')),
+                  DataCell(Text('SELL')),  
+                ]),  
+          ],)
+      ],
       ),
 
 
