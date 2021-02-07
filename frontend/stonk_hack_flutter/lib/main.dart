@@ -15,6 +15,8 @@ class _HomeState extends State<Home> {
   int nokiaPrice = 0;
   int gameStopPrice = 0;
 
+  List<Stock> stockList = [];
+
   List<Stock> createStocksFromJSON(String jsonString) {
     /*
     Decode a JSON string and creates a List of Stock objects
@@ -39,7 +41,7 @@ class _HomeState extends State<Home> {
     ]
     ''';
 
-    List<Stock> stockList = createStocksFromJSON(jsonString);
+    stockList = createStocksFromJSON(jsonString);
     stockList.forEach((s) => print(s.ticker));
   }
 
