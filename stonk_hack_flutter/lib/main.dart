@@ -17,11 +17,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // static const Color FOREGROUND_COLOR = Color(0xff009688);
-  // static const Color BACKGROUND_COLOR = Color(0xffFFEFD6);
-  // static const Color SECONDARY_COLOR = Color(0xff004D40);
-  // static const Color TERTIARY_COLOR = Color(0xff6f615B);
-
   List<Stock> stockList = [];
 
   Future fetchStocksJSON() async {
