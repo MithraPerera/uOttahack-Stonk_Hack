@@ -102,36 +102,26 @@ class _HomeState extends State<Home> {
                     'BUY/SELL',  
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),  
-          ], rows: [
-             DataRow(cells: [  
-                  DataCell(Text('TSLA')),  
-                  DataCell(Text('35.97')),  
-                  DataCell(Text('1')),
-                  DataCell(Text('-1')),
-                  DataCell(Text('SELL')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('NOK')),  
-                  DataCell(Text('10.17')),  
-                  DataCell(Text('1')),
-                  DataCell(Text('1')),
-                  DataCell(Text('BUY')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('GME')),  
-                  DataCell(Text('359.57')),  
-                  DataCell(Text('1')),
-                  DataCell(Text('1')),
-                  DataCell(Text('BUY')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('AMC')),  
-                  DataCell(Text('24.76')),  
-                  DataCell(Text('1')),
-                  DataCell(Text('-1')),
-                  DataCell(Text('SELL')),  
-                ]),  
-          ],)
+          ], rows: stockList.map((stock) => DataRow(
+            cells: [
+              DataCell(
+                Text('${stock.ticker}')
+              ),
+              DataCell(
+                  Text('${stock.price}')
+              ),
+              DataCell(
+                  Text('${stock.covidScore}')
+              ),
+              DataCell(
+                  Text('${stock.sentimentScore}')
+              ),
+              DataCell(
+                  Text('NOPE')
+              ),
+            ]
+        )).toList()
+        )
       ],
       ),
 
