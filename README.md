@@ -1,6 +1,6 @@
-
+![SentimentStocks Header](/readmeAssets/StonkHack4.jpg)
 # SentimentStocks
-SentimentStocks is a Flutter application (currently released [on the web](https://sentiment-stocks.web.app/)) that performs sentiment analysis on news articles and combines this data with COVID-19 case information to create a custom recommendation for which stocks may be on the rise in the near future.
+SentimentStocks is a Flutter application ([currently released on the web](https://sentiment-stocks.web.app/)) that performs sentiment analysis on news articles and combines this data with COVID-19 case information to create a custom recommendation for which stocks may be on the rise in the near future.
 
 # Problem
 
