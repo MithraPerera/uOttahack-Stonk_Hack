@@ -44,16 +44,7 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    String jsonString = '''
-    [
-      {"ticker":"TSLA", "price":20, "covidScore":-1,  "sentimentScore":1},
-      {"ticker":"NOK",  "price":20, "covidScore":-1,  "sentimentScore":1},
-      {"ticker":"GME",  "price":20, "covidScore":-1,  "sentimentScore":1}
-    ]
-    ''';
-
-    stockList = createStocksFromJSON(jsonString);
-    stockList.forEach((s) => print(s.ticker));
+    fetchStocksJSON();
   }
 
   @override
