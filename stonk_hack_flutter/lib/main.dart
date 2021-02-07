@@ -9,7 +9,7 @@ const Color BACKGROUND_COLOR = Color(0xffFFEFD6);
 const Color SECONDARY_COLOR = Color(0xff004D40);
 const Color TERTIARY_COLOR = Color(0xff6f615B);
 
-void main() => runApp(MaterialApp(title: 'Stonk Hack 4', home: Home()));
+void main() => runApp(MaterialApp(title: 'SentimentStocks', home: Home()));
 
 class Home extends StatefulWidget {
   @override
