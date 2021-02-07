@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+
+import 'stock.dart';
 
 void main() => runApp(MaterialApp(title: 'Stonk Hack 4', home: Home()));
 
@@ -12,8 +15,37 @@ class _HomeState extends State<Home> {
   int nokiaPrice = 0;
   int gameStopPrice = 0;
 
+  List<Stock> createStocksFromJSON(String jsonString) {
+    /*
+    Decode a JSON string and creates a List of Stock objects
+     */
+    List<Stock> _stocks = [];
+
+    var stocksJson = json.decode(jsonString);
+    for (var stockJson in stocksJson) {
+      _stocks.add(Stock.fromJson(stockJson));
+    }
+
+    return _stocks;
+  }
+
+  @override
+  void initState() {
+    String jsonString = '''
+    [
+      {"ticker":"TSLA", "price":20, "covidScore":-1,  "sentimentScore":1},
+      {"ticker":"NOK",  "price":20, "covidScore":-1,  "sentimentScore":1},
+      {"ticker":"GME",  "price":20, "covidScore":-1,  "sentimentScore":1}
+    ]
+    ''';
+
+    List<Stock> stockList = createStocksFromJSON(jsonString);
+    stockList.forEach((s) => print(s.ticker));
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       //backgroundColor: Colors.grey[900],
       appBar: AppBar(
