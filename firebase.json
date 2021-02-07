@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/web",
+    "public": "stonk_hack_flutter/build/web",
     "ignore": [
       "firebase.json",
       "**/.*",
