@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Center(child: Text('Stonk Hack 4')),
+              child: Center(child: Text('SentimentStocks')),
             ),
           ],
         ),
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
-              'Stonk Picks',
+              'Top Stocks',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: SECONDARY_COLOR, letterSpacing: 2.0),
             ),
           ),
