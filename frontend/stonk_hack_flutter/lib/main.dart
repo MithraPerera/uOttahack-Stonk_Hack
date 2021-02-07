@@ -49,7 +49,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: BACKGROUND_COLOR,
       appBar: AppBar(
@@ -71,88 +70,100 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-
-      body: ListView(children: <Widget>[
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              'Top Stocks',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: SECONDARY_COLOR, letterSpacing: 2.0),
+      body: ListView(
+        children: <Widget>[
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'Top Stocks',
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: SECONDARY_COLOR,
+                    letterSpacing: 2.0),
+              ),
             ),
           ),
-        ),
-        DataTable(
-          columns: [
-            DataColumn(label: Text(  
-                    'TICKER',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
-                )),  
-                DataColumn(label: Text(  
-                    'PRICE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
-                )),  
-                DataColumn(label: Text(  
-                    'COVID SCORE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
-                )),
-                DataColumn(label: Text(  
-                    'SENTIMENT SCORE',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
-                )),
-                DataColumn(label: Text(  
-                    'BUY/SELL',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
-                )),  
-          ], rows: stockList.map((stock) => DataRow(
-            cells: [
-              DataCell(
-                Text(
-                  '${stock.ticker}',
-                  style: TextStyle(
-                    color: TERTIARY_COLOR,
-                    fontWeight: FontWeight.bold,
-                  )),
-              ),
-              DataCell(
-                  Text(
-                    '${stock.price}',
-                    style: TextStyle(
-                      color: TERTIARY_COLOR,
-                      fontWeight: FontWeight.bold,
-                    )),
-                  ),
-              DataCell(
-                  Text(
-                    '${stock.covidScore}',
-                    style: TextStyle(
-                      color: TERTIARY_COLOR,
-                      fontWeight: FontWeight.bold,
-                    )),
-                  ),
-              DataCell(
-                Text(
-                    '${stock.sentimentScore}',
-                    style: TextStyle(
-                      color: TERTIARY_COLOR,
-                      fontWeight: FontWeight.bold,
-                    )),
-              ),
-              DataCell(
-                Text(
-                    'NOPE',
-                    style: TextStyle(
-                      color: TERTIARY_COLOR,
-                      fontWeight: FontWeight.bold,
-                    )),
-              ),
-            ]
-        )).toList()
-        )
-      ],
+          DataTable(
+              columns: [
+                DataColumn(
+                    label: Text('TICKER',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: FOREGROUND_COLOR,
+                            letterSpacing: 2.0))),
+                DataColumn(
+                    label: Text('PRICE',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: FOREGROUND_COLOR,
+                            letterSpacing: 2.0))),
+                DataColumn(
+                    label: Text('COVID SCORE',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: FOREGROUND_COLOR,
+                            letterSpacing: 2.0))),
+                DataColumn(
+                    label: Text('SENTIMENT SCORE',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: FOREGROUND_COLOR,
+                            letterSpacing: 2.0))),
+                DataColumn(
+                    label: Text('BUY/SELL',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: FOREGROUND_COLOR,
+                            letterSpacing: 2.0))),
+              ],
+              rows: stockList
+                  .map((stock) => DataRow(cells: [
+                        DataCell(
+                          Text('${stock.ticker}',
+                              style: TextStyle(
+                                color: TERTIARY_COLOR,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        DataCell(
+                          Text('${stock.price}',
+                              style: TextStyle(
+                                color: TERTIARY_COLOR,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        DataCell(
+                          Text('${stock.covidScore}',
+                              style: TextStyle(
+                                color: TERTIARY_COLOR,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        DataCell(
+                          Text('${stock.sentimentScore}',
+                              style: TextStyle(
+                                color: TERTIARY_COLOR,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        DataCell(
+                          Text('NOPE',
+                              style: TextStyle(
+                                color: TERTIARY_COLOR,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                      ]))
+                  .toList())
+        ],
       ),
-
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text('?'),
