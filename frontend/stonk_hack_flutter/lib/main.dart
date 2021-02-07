@@ -11,6 +11,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  static const Color FOREGROUND_COLOR = Colors.teal;
+  static const Color BACKGROUND_COLOR = Colors.white;
+  static const Color SECONDARY_COLOR = Colors.red;
+
   List<Stock> stockList = [];
 
   List<Stock> createStocksFromJSON(String jsonString) {
@@ -45,10 +49,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      //backgroundColor: Colors.grey[900],
+      backgroundColor: BACKGROUND_COLOR,
       appBar: AppBar(
         centerTitle: false,
-        backgroundColor: Colors.teal,
+        backgroundColor: FOREGROUND_COLOR,
         elevation: 0.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -72,7 +76,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(20.0),
             child: Text(
               'Stonk Picks',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 2.0),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: SECONDARY_COLOR, letterSpacing: 2.0),
             ),
           ),
         ),
@@ -80,23 +84,23 @@ class _HomeState extends State<Home> {
           columns: [
             DataColumn(label: Text(  
                     'TICKER',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),  
                 DataColumn(label: Text(  
                     'PRICE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),  
                 DataColumn(label: Text(  
                     'COVID SCORE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
                     'STONK SCORE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
                     'BUY/SELL',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),  
           ], rows: stockList.map((stock) => DataRow(
             cells: [
@@ -125,7 +129,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text('?'),
-        backgroundColor: Colors.red[600],
+        backgroundColor: SECONDARY_COLOR,
       ),
     );
   }
