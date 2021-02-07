@@ -30,8 +30,7 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  Widget build(BuildContext context) {
-
+  void initState() {
     String jsonString = '''
     [
       {"ticker":"TSLA", "price":20, "covidScore":-1,  "sentimentScore":1},
@@ -42,6 +41,10 @@ class _HomeState extends State<Home> {
 
     List<Stock> stockList = createStocksFromJSON(jsonString);
     stockList.forEach((s) => print(s.ticker));
+  }
+
+  @override
+  Widget build(BuildContext context) {
 
     return Scaffold(
       //backgroundColor: Colors.grey[850],
