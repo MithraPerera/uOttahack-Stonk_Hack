@@ -70,7 +70,11 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Center(child: Text('SentimentStocks', style: TextStyle(fontWeight: FontWeight.bold),)),
+              child: Center(
+                  child: Text(
+                'SentimentStocks',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )),
             ),
           ],
         ),
@@ -233,6 +237,13 @@ Widget _buildPopupDialog(BuildContext context) {
         ),
         Text(
             "With the increase in retail investors in the market from 9 year olds to teenage boys looking to gamble away their birthday money, the stock market has changed and can no longer be analyzed by technical analysis alone. Using our state of the art machine learning and natural language processing models, we are able to acurately determine the public sentiment of a particular stock to help our users determine whether they want to add a stock to their portfolio."),
+        Text(
+          "Scale: ",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: TERTIARY_COLOR,
+          ),
+        ),
         Text(
           "1(GOOD) to 5(HIGH RISK)",
           style: TextStyle(
