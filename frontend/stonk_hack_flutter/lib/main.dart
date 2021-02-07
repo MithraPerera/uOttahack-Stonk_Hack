@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'stock.dart';
@@ -17,6 +18,15 @@ class _HomeState extends State<Home> {
   static const Color TERTIARY_COLOR = Color(0xff6f615B);
 
   List<Stock> stockList = [];
+
+  Future fetchStocksJSON() async {
+    String url = '';
+    var response = await http.get(url);
+    if (response.statusCode == 200) {
+      // If response was returned properly
+      createStocksFromJSON(response.body);
+    }
+  }
 
   List<Stock> createStocksFromJSON(String jsonString) {
     /*
