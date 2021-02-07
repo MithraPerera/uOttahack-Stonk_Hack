@@ -11,10 +11,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int teslaPrice = 0;
-  int nokiaPrice = 0;
-  int gameStopPrice = 0;
-
   List<Stock> stockList = [];
 
   List<Stock> createStocksFromJSON(String jsonString) {
