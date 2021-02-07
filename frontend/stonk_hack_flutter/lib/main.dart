@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.grey[850],
+      //backgroundColor: Colors.grey[900],
       appBar: AppBar(
         centerTitle: false,
         backgroundColor: Colors.teal,
@@ -41,8 +41,8 @@ class _HomeState extends State<Home> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
-              'Top 3 Stocks',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              'Stonk Picks',
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.red, letterSpacing: 2.0),
             ),
           ),
         ),
@@ -50,23 +50,23 @@ class _HomeState extends State<Home> {
           columns: [
             DataColumn(label: Text(  
                     'TICKER',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),  
                 DataColumn(label: Text(  
                     'PRICE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),  
                 DataColumn(label: Text(  
                     'COVID SCORE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
                     'STONK SCORE',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
                     'BUY/SELL',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.teal, letterSpacing: 2.0)  
                 )),  
           ], rows: [
              DataRow(cells: [  
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Text('ADD'),
+        child: Text('?'),
         backgroundColor: Colors.red[600],
       ),
     );
