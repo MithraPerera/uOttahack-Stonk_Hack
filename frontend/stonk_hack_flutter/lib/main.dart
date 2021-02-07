@@ -96,7 +96,7 @@ class _HomeState extends State<Home> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
-                    'STONK SCORE',  
+                    'SENTIMENT SCORE',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: FOREGROUND_COLOR, letterSpacing: 2.0)  
                 )),
                 DataColumn(label: Text(  
