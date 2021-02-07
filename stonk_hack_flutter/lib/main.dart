@@ -44,7 +44,19 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    fetchStocksJSON();
+    // fetchStocksJSON();
+    String jsonString = '''
+    [
+      {"ticker":"TSLA", "price":852.23, "covidScore":1,  "sentimentScore":5, "buySell": "Buy"},
+      {"ticker":"NOK",  "price":4.22, "covidScore":1,  "sentimentScore":3, "buySell": "Buy"},
+      {"ticker":"GME",  "price":63.75, "covidScore":5,  "sentimentScore":4, "buySell": "Sell"},
+      {"ticker":"AMC",  "price":6.83, "covidScore":5,  "sentimentScore":4, "buySell": "Sell"},
+      {"ticker":"BB",  "price":13.23, "covidScore":3,  "sentimentScore":4, "buySell": "Buy"},
+      {"ticker":"SNDL",  "price":1.13, "covidScore":4,  "sentimentScore":2, "buySell": "Buy"}
+    ]
+    ''';
+
+    stockList = createStocksFromJSON(jsonString);
   }
 
   @override
@@ -162,7 +174,7 @@ class _HomeState extends State<Home> {
                               )),
                         ),
                         DataCell(
-                          Text('NOPE',
+                          Text('${stock.buySell}',
                               style: TextStyle(
                                 color: TERTIARY_COLOR,
                                 fontWeight: FontWeight.bold,
