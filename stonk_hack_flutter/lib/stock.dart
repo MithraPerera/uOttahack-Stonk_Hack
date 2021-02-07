@@ -3,6 +3,7 @@ class Stock {
   double price;
   double covidScore;
   double sentimentScore;
+  String buySell;
 
   Stock (this.ticker, this.price, this.covidScore, this.sentimentScore);
 
@@ -10,5 +11,6 @@ class Stock {
     : ticker = json['ticker'],
       price = json['price'],
       covidScore = json['covidScore'],
-      sentimentScore = json['sentimentScore'];
+      sentimentScore = json['sentimentScore'],
+      buySell = json['buySell'];
 }
